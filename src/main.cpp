@@ -54,6 +54,7 @@ int main(void)
 
     /* Create a windowed mode window and its OpenGL context */
     GLFWwindow* window = glfwCreateWindow(g_windowSizeX, g_windowSizeY, "Engine", nullptr, nullptr);
+
     if (!window)
     {
         std::cerr << "Window was not created!" << std::endl;
@@ -137,7 +138,7 @@ int main(void)
 void glfwWindowSizeCallback(GLFWwindow* window, int windowSizeX, int windowSizeY) {
     g_windowSizeX = windowSizeX;
     g_windowSizeY = windowSizeY;
-    glViewport(0, 0, 50, windowSizeY/2);
+    glViewport(0, 0, windowSizeX, windowSizeY);
 }
 
 void glfwKeyCallback(GLFWwindow* window, int key, int scancode, int action, int mode) {
